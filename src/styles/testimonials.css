@@ -1,0 +1,207 @@
+/* Стили для секции отзывов */
+.testimonials-section {
+  padding: 6rem 0;
+  background: linear-gradient(150deg, #6C5CE7 0%, #5148c0 100%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  margin-top: -30px;
+}
+
+.testimonials-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonials-section .header-container {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Пульсация для заголовка */
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.03); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.03); }
+  60% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+.heartbeat {
+  animation: heartbeat 4s infinite ease-in-out;
+}
+
+.testimonials-section .section-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 30px auto 0;
+}
+
+/* Стили для сетки отзывов - современный Masonry Layout с CSS columns */
+.testimonials-clouds {
+  display: block;
+  column-count: 3;
+  column-gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonial-cloud {
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  display: inline-block; /* Для лучшей совместимости */
+}
+
+.testimonial-cloud.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Настоящее облачко для сообщения */
+.cloud-content {
+  background-color: white;
+  padding: 16px 18px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  overflow: visible;
+}
+
+/* Полоса прокрутки для длинных отзывов */
+.cloud-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cloud-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.cloud-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* Hover эффект */
+.testimonial-cloud:hover .cloud-content {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(50, 40, 150, 0.15);
+}
+
+/* Хвостик облачка */
+.cloud-content:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+}
+
+.cloud-content p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
+}
+
+/* Выделение важных слов яркими цветами */
+.testimonials-section .highlight {
+  background: linear-gradient(90deg, #8c7dff, #6C5CE7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+.cloud-author {
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 15px;
+}
+
+.testimonials-section .author-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(90deg, #6C5CE7, #9782ff);
+  border-radius: 15px;
+  padding: 5px 12px;
+  display: inline-block;
+}
+
+/* Вариации облачков */
+.testimonial-cloud:nth-child(3n-1) .cloud-content {
+  background-color: #f0f9f9;
+}
+
+.testimonial-cloud:nth-child(3n-1) .cloud-content:after {
+  background-color: #f0f9f9;
+}
+
+.testimonial-cloud:nth-child(3n+2) .cloud-content:after {
+  right: auto;
+  left: 15px;
+}
+
+
+/* Адаптивная верстка */
+@media (max-width: 992px) {
+  .testimonials-clouds {
+    column-count: 2; /* 2 колонки на планшетах */
+  }
+  
+  .testimonials-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-clouds {
+    column-count: 1; /* 1 колонка на мобильных */
+  }
+  
+  .testimonial-cloud {
+    margin: 0 auto 15px;
+    max-width: 90%;
+  }
+  
+  .testimonials-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .testimonials-section {
+    padding: 3rem 0;
+  }
+  
+  .testimonials-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+}

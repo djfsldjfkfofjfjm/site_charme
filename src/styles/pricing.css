@@ -1,0 +1,330 @@
+/* Основной блок */
+.pricing-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #FFFFFF;
+  position: static !important;
+  overflow: visible !important;
+  z-index: 2 !important;
+  border-radius: 30px;
+  margin-top: -30px;
+}
+
+/* Заголовки */
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #121212;
+  margin: 0 0 16px;
+}
+
+.section-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: #4a4b57;
+  margin: 0 0 70px;
+}
+
+/* Контейнер для карточек */
+.pricing-cards-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1050px;
+}
+
+/* Общие стили для карточек */
+.pricing-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Белая карточка */
+.white-card {
+  background-color: #FFFFFF;
+}
+
+/* Фиолетовая карточка */
+.purple-card {
+  background-color: #6A53FE;
+  color: white;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  position: static !important;
+  z-index: 5 !important;
+  flex-direction: column !important;
+}
+
+.purple-card .pricing-card-title {
+  color: white;
+}
+
+.purple-card .price {
+  color: white;
+}
+
+.purple-card .features-list li {
+  color: white;
+}
+
+/* Заголовок карточки */
+.pricing-card-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #000000;
+}
+
+/* Подзаголовок карточки */
+.pricing-card-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 32px;
+  color: #4a4b57;
+}
+
+.purple-card .pricing-card-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Блок с ценой */
+.price-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.price {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000000;
+}
+
+.period {
+  font-size: 16px;
+  color: #4a4b57;
+  margin-bottom: 6px;
+}
+
+.purple-card .period {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Список фич */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  flex-grow: 1;
+}
+
+.features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Кнопка */
+.price-button {
+  display: block;
+  background-color: #6A53FE;
+  color: white;
+  text-align: center;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.price-button:hover {
+  background-color: #5944e0;
+}
+
+.white-button {
+  background-color: white;
+  color: #6A53FE;
+}
+
+.white-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Блок призыва к действию с калькулятором */
+.calculator-cta-container {
+  margin-top: 80px;
+  background: linear-gradient(150deg, #6A53FE, #5944e0);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(106, 83, 254, 0.2);
+  overflow: hidden;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calculator-cta-inner {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+}
+
+.calculator-cta-content {
+  flex: 1.5;
+  color: white;
+  text-align: left;
+}
+
+.calculator-cta-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+
+.calculator-cta-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.calculator-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: white;
+  color: #6A53FE;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.calculator-cta-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  padding: 20px;
+}
+
+.calculator-cta-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .pricing-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pricing-card {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .calculator-cta-inner {
+    flex-direction: column;
+  }
+  
+  .calculator-cta-content {
+    text-align: center;
+  }
+  
+  .calculator-cta-image {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 60px 20px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .section-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .pricing-card {
+    padding: 30px;
+  }
+  
+  .pricing-card-title {
+    font-size: 24px;
+  }
+  
+  .price {
+    font-size: 36px;
+  }
+  
+  .calculator-cta-container {
+    margin-top: 60px;
+  }
+  
+  .calculator-cta-inner {
+    padding: 30px;
+  }
+  
+  .calculator-cta-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .calculator-cta-inner {
+    padding: 20px;
+  }
+  
+  .calculator-cta-title {
+    font-size: 22px;
+  }
+  
+  .calculator-cta-text {
+    font-size: 14px;
+  }
+}

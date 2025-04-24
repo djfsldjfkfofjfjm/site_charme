@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЧАРМИ — цифровой инструмент для салонов красоты</title>
+  <link rel="icon" href="src/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Подключение CSS -->
+  <link rel="stylesheet" href="src/styles/main.css">
+  <link rel="stylesheet" href="src/styles/hero.css">
+  <link rel="stylesheet" href="src/styles/problems.css">
+  <link rel="stylesheet" href="src/styles/benefits.css">
+  <link rel="stylesheet" href="src/styles/timeline.css">
+  <link rel="stylesheet" href="src/styles/testimonials.css">
+  <link rel="stylesheet" href="src/styles/pricing.css">
+  <link rel="stylesheet" href="src/styles/footer.css">
+</head>
+<body>
+  <!-- Навигация -->
+  <header class="main-header">
+    <div class="container-inner">
+      <nav class="main-nav">
+        <a href="index.html" class="logo">
+          <span class="logo-text">ЧАРМИ</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Главная</a></li>
+          <li><a href="#problems-section">Проблемы</a></li>
+          <li><a href="#benefits-section">Преимущества</a></li>
+          <li><a href="#pricing-section">Тарифы</a></li>
+          <li><a href="calculator.html">Калькулятор ROI</a></li>
+        </ul>
+        <a href="https://calendar.app.google/fmPQoEZwdpqDEVgF8" target="_blank" class="btn-cta">Запросить демо</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Загрузка компонентов -->
+  <div id="hero-section"></div>
+  <div id="problems-section"></div>
+  <div id="benefits-section"></div>
+  <div id="timeline-section" class="how-it-works" style="position: static !important; overflow: visible !important; z-index: 2 !important;"></div>
+  <div id="testimonials-section"></div>
+  <div id="pricing-section" class="pricing-section" style="position: static !important; overflow: visible !important; z-index: 5 !important;"></div>
+  <div id="footer-section"></div>
+
+  <!-- Скрипты -->
+  <script src="src/js/animations.js"></script>
+  <script>
+    // Функция для загрузки HTML-компонентов
+    async function loadComponent(url, targetId) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Failed to load ${url}: ${response.status} ${response.statusText}`);
+        }
+        const html = await response.text();
+        
+        // Используем DOMParser чтобы избежать внедрения скриптов в SVG
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        // Получаем все содержимое и добавляем в целевой элемент
+        const targetElement = document.getElementById(targetId);
+        targetElement.innerHTML = '';
+        
+        // Копируем все узлы из документа в целевой элемент
+        const fragment = document.createDocumentFragment();
+        Array.from(doc.body.childNodes).forEach(node => {
+          fragment.appendChild(node.cloneNode(true));
+        });
+        
+        targetElement.appendChild(fragment);
+      } catch (error) {
+        console.error('Error loading component:', error);
+      }
+    }
+
+    // Загрузить все компоненты при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+      loadComponent('src/components/hero.html', 'hero-section');
+      loadComponent('src/components/problems.html', 'problems-section');
+      loadComponent('src/components/benefits.html', 'benefits-section');
+      loadComponent('src/components/timeline.html', 'timeline-section');
+      loadComponent('src/components/testimonials.html', 'testimonials-section');
+      loadComponent('src/components/pricing.html', 'pricing-section');
+      loadComponent('src/components/footer.html', 'footer-section');
+    });
+  </script>
+</body>
+</html>

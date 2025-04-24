@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>ЧАРМИ</title>
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#6C5CE7"/>
+            <stop offset="100%" style="stop-color:#9F66FF"/>
+        </linearGradient>
+    </defs>
+    <g>
+        <rect fill="url(#gradient)" x="0" y="0" width="32" height="32" rx="6"/>
+        <path d="M8,8 L13,8 L13,15 L19,15 L19,8 L24,8 L24,24 L19,24 L19,19 L13,19 L13,24 L8,24 Z" fill="white"/>
+    </g>
+</svg>

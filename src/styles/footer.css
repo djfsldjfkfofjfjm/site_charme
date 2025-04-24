@@ -1,0 +1,211 @@
+.footer {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(150deg, #1E2129 0%, #161922 100%);
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px 30px 0 0;
+  margin-top: -30px;
+}
+
+/* Верхняя секция с призывом к действию */
+.footer-cta {
+  color: white;
+  width: 100%;
+  padding: 60px 0;
+  background: linear-gradient(150deg, #2d3142, #1a1c25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cta-left {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.cta-right {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+}
+
+.footer-cta-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  background: linear-gradient(90deg, #ffffff, #a3ffbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-cta-text {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.footer-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(45deg, #6A53FE, #5944e0);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(106, 83, 254, 0.3);
+}
+
+.footer-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(106, 83, 254, 0.4);
+}
+
+/* Основная часть футера */
+.footer-main {
+  padding: 60px 0 30px;
+  color: white;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-tagline {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.footer-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: #a3ffbb;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links li a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+  display: inline-block;
+}
+
+.footer-links li a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .cta-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .cta-left, .cta-right {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-brand {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-cta {
+    padding: 40px 0;
+  }
+  
+  .footer-cta-title {
+    font-size: 28px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer-nav, .footer-contact {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-cta-title {
+    font-size: 24px;
+  }
+  
+  .footer-main {
+    padding: 40px 0 20px;
+  }
+}

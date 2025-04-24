@@ -1,0 +1,288 @@
+<section class="inline-calculator-section">
+  <div class="container-inner">
+    <h2 class="section-title">Рассчитайте окупаемость ЧАРМИ для вашего салона</h2>
+    <p class="section-subtitle">Проверьте, какую экономическую выгоду принесет внедрение ЧАРМИ в вашем бизнесе</p>
+    
+    <div class="calculator-container">
+      <!-- Форма ввода данных -->
+      <div class="calculator-form">
+        <h3>Введите данные вашего салона</h3>
+        
+        <div class="input-grid">
+          <!-- Количество мастеров -->
+          <div class="input-group">
+            <label for="masters-count-inline">Количество мастеров</label>
+            <div class="number-input">
+              <button type="button" class="decrement-button">−</button>
+              <input type="number" id="masters-count-inline" min="1" value="12" class="number-field">
+              <button type="button" class="increment-button">+</button>
+            </div>
+            <p class="input-hint">Топ-мастеров: 5 / Начинающих: 7</p>
+          </div>
+          
+          <!-- Количество клиентов в месяц -->
+          <div class="input-group">
+            <label for="clients-count-inline">Количество клиентов в месяц</label>
+            <div class="number-input">
+              <button type="button" class="decrement-button">−</button>
+              <input type="number" id="clients-count-inline" min="100" step="50" value="800" class="number-field">
+              <button type="button" class="increment-button">+</button>
+            </div>
+          </div>
+          
+          <!-- Средний чек топ-мастера -->
+          <div class="input-group">
+            <label for="top-master-check-inline">Средний чек топ-мастера (₽)</label>
+            <div class="number-input">
+              <button type="button" class="decrement-button">−</button>
+              <input type="number" id="top-master-check-inline" min="500" step="100" value="2500" class="number-field">
+              <button type="button" class="increment-button">+</button>
+            </div>
+          </div>
+          
+          <!-- Средний чек начинающего мастера -->
+          <div class="input-group">
+            <label for="junior-master-check-inline">Средний чек начинающего мастера (₽)</label>
+            <div class="number-input">
+              <button type="button" class="decrement-button">−</button>
+              <input type="number" id="junior-master-check-inline" min="500" step="100" value="1500" class="number-field">
+              <button type="button" class="increment-button">+</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sliders-row">
+          <!-- Прирост повторных клиентов -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="repeat-clients-slider-inline">Прирост повторных клиентов</label>
+              <span class="slider-value">+1%</span>
+            </div>
+            <input type="range" id="repeat-clients-slider-inline" min="1" max="10" step="1" value="1" class="range-slider">
+          </div>
+          
+          <!-- Прирост клиентов по рекомендациям -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="referral-clients-slider-inline">Прирост клиентов по рекомендациям</label>
+              <span class="slider-value">+1%</span>
+            </div>
+            <input type="range" id="referral-clients-slider-inline" min="1" max="10" step="1" value="1" class="range-slider">
+          </div>
+          
+          <!-- Прирост конверсии в запись -->
+          <div class="slider-group">
+            <div class="slider-header">
+              <label for="conversion-slider-inline">Прирост конверсии в запись</label>
+              <span class="slider-value">+1%</span>
+            </div>
+            <input type="range" id="conversion-slider-inline" min="1" max="10" step="1" value="1" class="range-slider">
+          </div>
+        </div>
+        
+        <!-- Период расчета -->
+        <div class="period-selector">
+          <label>Период расчета</label>
+          <div class="period-buttons">
+            <button type="button" class="period-button">1 месяц</button>
+            <button type="button" class="period-button">3 месяца</button>
+            <button type="button" class="period-button active">6 месяцев</button>
+            <button type="button" class="period-button">12 месяцев</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Результаты расчета -->
+      <div class="calculator-results">
+        <h3>Результаты расчета</h3>
+        
+        <div class="metrics-grid">
+          <div class="metric-card roi">
+            <h4>ROI за период</h4>
+            <p class="metric-value" id="roi-value-inline">74%</p>
+          </div>
+          
+          <div class="metric-card effect">
+            <h4>Экономический эффект</h4>
+            <p class="metric-value" id="effect-value-inline">39 700 ₽</p>
+          </div>
+          
+          <div class="metric-card clients">
+            <h4>Доп. клиенты</h4>
+            <p class="metric-value" id="clients-value-inline">37</p>
+          </div>
+        </div>
+        
+        <!-- Ссылка на полную версию -->
+        <div class="full-calculator-link">
+          <a href="calculator.html" class="btn">Открыть подробный калькулятор</a>
+          <p>В подробной версии вы получите детальный расчет по месяцам и сможете изучить структуру дополнительного дохода</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Скрипт для работы встроенного калькулятора
+  (function() {
+    // Базовые параметры для расчетов
+    const IMPLEMENTATION_COST = 30000; // Стоимость внедрения (разовая)
+    const MONTHLY_COST_PER_MASTER = 333; // Ежемесячная плата за одного мастера
+    const EFFECT_DISTRIBUTION = {
+      // Распределение эффекта по месяцам (% от максимального эффекта)
+      1: 0.05, // 5% в первый месяц
+      2: 0.25, // 25% во второй месяц
+      3: 0.65, // 65% в третий месяц
+      4: 0.85, // 85% в четвертый месяц
+      5: 0.95, // 95% в пятый месяц
+      6: 1,    // 100% в шестой и последующие месяцы
+    };
+
+    // Инициализация при загрузке
+    window.addEventListener('DOMContentLoaded', function() {
+      setupCalculatorInteractions();
+      updateCalculations();
+    });
+    
+    // Настройка интерактивных элементов калькулятора
+    function setupCalculatorInteractions() {
+      // Обработчики для кнопок +/- в числовых полях
+      document.querySelectorAll('.inline-calculator-section .increment-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const input = this.parentNode.querySelector('input');
+          input.value = parseInt(input.value) + (input.step ? parseInt(input.step) : 1);
+          updateCalculations();
+        });
+      });
+      
+      document.querySelectorAll('.inline-calculator-section .decrement-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const input = this.parentNode.querySelector('input');
+          const newValue = parseInt(input.value) - (input.step ? parseInt(input.step) : 1);
+          if (newValue >= parseInt(input.min)) {
+            input.value = newValue;
+            updateCalculations();
+          }
+        });
+      });
+      
+      // Обработчики для слайдеров
+      document.querySelectorAll('.inline-calculator-section .range-slider').forEach(slider => {
+        slider.addEventListener('input', function() {
+          this.parentNode.querySelector('.slider-value').textContent = `+${this.value}%`;
+          updateCalculations();
+        });
+      });
+      
+      // Обработчики для кнопок периода
+      document.querySelectorAll('.inline-calculator-section .period-button').forEach(button => {
+        button.addEventListener('click', function() {
+          document.querySelectorAll('.inline-calculator-section .period-button').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          this.classList.add('active');
+          updateCalculations();
+        });
+      });
+      
+      // Обработчики для числовых полей
+      document.querySelectorAll('.inline-calculator-section .number-field').forEach(input => {
+        input.addEventListener('change', updateCalculations);
+      });
+    }
+    
+    // Основная функция расчета экономического эффекта
+    function updateCalculations() {
+      // Получаем значения всех входных данных
+      const mastersCount = parseInt(document.getElementById('masters-count-inline').value || 12);
+      const topMastersCount = Math.min(5, mastersCount); // По умолчанию первые 5 - топ-мастера
+      const juniorMastersCount = mastersCount - topMastersCount;
+      
+      const clientsCount = parseInt(document.getElementById('clients-count-inline').value || 800);
+      const topMasterCheck = parseInt(document.getElementById('top-master-check-inline').value || 2500);
+      const juniorMasterCheck = parseInt(document.getElementById('junior-master-check-inline').value || 1500);
+      
+      const repeatClientPercent = parseInt(document.getElementById('repeat-clients-slider-inline').value || 1) / 100;
+      const referralClientPercent = parseInt(document.getElementById('referral-clients-slider-inline').value || 1) / 100;
+      const conversionPercent = parseInt(document.getElementById('conversion-slider-inline').value || 1) / 100;
+      
+      // Определение выбранного периода
+      let selectedPeriod = 6; // По умолчанию 6 месяцев
+      document.querySelectorAll('.inline-calculator-section .period-button').forEach(button => {
+        if (button.classList.contains('active')) {
+          const periodText = button.textContent.trim();
+          if (periodText.includes('1')) selectedPeriod = 1;
+          else if (periodText.includes('3')) selectedPeriod = 3;
+          else if (periodText.includes('12')) selectedPeriod = 12;
+        }
+      });
+      
+      // Расчет базовых параметров
+      const monthlyRevenue = (topMastersCount * topMasterCheck + juniorMastersCount * juniorMasterCheck) * 
+                          (clientsCount / mastersCount);
+      
+      // Расчет дополнительных клиентов и доходов
+      let additionalClients = 0;
+      let additionalRevenue = 0;
+      let repeatClientsRevenue = 0;
+      let referralClientsRevenue = 0;
+      let masterReferralRevenue = 0;
+      let conversionRevenue = 0;
+      let redistributionRevenue = 0;
+      
+      // Расчет по месяцам
+      for (let month = 1; month <= selectedPeriod; month++) {
+        const effectMultiplier = EFFECT_DISTRIBUTION[Math.min(month, 6)];
+        
+        // Эффект от повторных клиентов
+        const monthRepeatClients = Math.round(clientsCount * repeatClientPercent * effectMultiplier);
+        const monthRepeatRevenue = monthRepeatClients * ((topMasterCheck + juniorMasterCheck) / 2);
+        repeatClientsRevenue += monthRepeatRevenue;
+        
+        // Эффект от рекомендаций клиентов
+        const monthReferralClients = Math.round(clientsCount * referralClientPercent * effectMultiplier);
+        const monthReferralRevenue = monthReferralClients * ((topMasterCheck + juniorMasterCheck) / 2);
+        referralClientsRevenue += monthReferralRevenue;
+        
+        // Эффект от рекомендаций мастеров (25% от рекомендаций клиентов)
+        const monthMasterReferralRevenue = monthReferralRevenue * 0.25;
+        masterReferralRevenue += monthMasterReferralRevenue;
+        
+        // Эффект от повышения конверсии
+        const monthConversionRevenue = monthlyRevenue * conversionPercent * effectMultiplier;
+        conversionRevenue += monthConversionRevenue;
+        
+        // Эффект от перераспределения клиентов от топ к начинающим
+        if (juniorMastersCount > 0) {
+          const redistributionEffect = (juniorMastersCount / mastersCount) * 0.1 * effectMultiplier;
+          const monthRedistributionRevenue = monthlyRevenue * redistributionEffect;
+          redistributionRevenue += monthRedistributionRevenue;
+        }
+        
+        // Суммарный месячный эффект
+        additionalClients += monthRepeatClients + monthReferralClients;
+      }
+      
+      // Общий дополнительный доход
+      additionalRevenue = repeatClientsRevenue + referralClientsRevenue + masterReferralRevenue + 
+                          conversionRevenue + redistributionRevenue;
+      
+      // Расчет затрат
+      const implementationCost = IMPLEMENTATION_COST;
+      const monthlyCost = mastersCount * MONTHLY_COST_PER_MASTER;
+      const totalCost = implementationCost + (monthlyCost * selectedPeriod);
+      
+      // Экономический эффект
+      const economicEffect = additionalRevenue - totalCost;
+      
+      // ROI
+      const roi = Math.round((economicEffect / totalCost) * 100);
+      
+      // Обновление интерфейса
+      document.getElementById('roi-value-inline').textContent = `${roi}%`;
+      document.getElementById('effect-value-inline').textContent = `${Math.round(economicEffect).toLocaleString('ru-RU')} ₽`;
+      document.getElementById('clients-value-inline').textContent = Math.round(additionalClients);
+    }
+  })();
+</script>

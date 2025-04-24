@@ -1,0 +1,176 @@
+/* Секция проблем и решений */
+.problems-section {
+  position: relative;
+  background-color: white;
+  padding: 60px 0 80px;
+  color: #333;
+  z-index: 1;
+  margin-top: -50px;
+  border-radius: 30px;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+}
+
+.problems-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 40px;
+  text-align: center;
+}
+
+.problems-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #5148c0;
+  margin-bottom: 20px;
+}
+
+.problem-container {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.problem-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.problem-content {
+  flex: 1;
+}
+
+.problem-badge {
+  display: inline-block;
+  background-color: #ffdbdb;
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.solution-box p {
+  line-height: 1.6;
+}
+
+.problem-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  color: #333;
+}
+
+.problem-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.solution-box {
+  background-color: #f5f7fb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.solution-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #6C5CE7;
+}
+
+.solution-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.solution-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.problem-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px; /* Фиксированная высота контейнера */
+  max-width: 500px; /* Ограничение ширины */
+  margin: 0 auto;
+}
+
+.problem-image img {
+  width: auto; /* Авто-ширина */
+  height: 100%; /* Полная высота */
+  max-width: 500px; /* Ограничение ширины */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  object-fit: contain; /* Сохраняет пропорции без обрезки */
+  background-color: white; /* Для прозрачных PNG */
+}
+
+@media (max-width: 992px) {
+  .problem-container {
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+  
+  /* На мобильной версии всегда изображение сверху, текст снизу */
+  .problem-container,
+  .problem-container.reverse {
+    flex-direction: column;
+  }
+  
+  .problem-content,
+  .problem-image {
+    width: 100%;
+  }
+  
+  .problem-title {
+    font-size: 22px;
+  }
+  
+  .problem-image {
+    height: 400px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
+    order: -1; /* Всегда помещаем изображение сверху на мобильной версии */
+  }
+  
+  .problem-image img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+  }
+  
+  .problems-section {
+    padding-top: 20px;
+  }
+  
+  .problems-header {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .problem-image {
+    height: 350px;
+  }
+  
+  .problem-title {
+    font-size: 20px;
+  }
+  
+  .solution-box {
+    padding: 16px;
+  }
+}

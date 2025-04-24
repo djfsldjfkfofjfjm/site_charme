@@ -1,0 +1,13 @@
+{
+  "name": "charme-landing",
+  "version": "1.0.0",
+  "description": "Чарми - цифровой инструмент для салонов красоты",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

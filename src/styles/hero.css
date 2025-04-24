@@ -1,0 +1,227 @@
+/* Стили для героя (первой секции) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 100vh;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 0;
+}
+
+.left-column {
+  width: 50%;
+}
+
+.highlight {
+  color: #a3ffbb;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.15;
+  max-width: 650px;
+  letter-spacing: -0.01em;
+}
+
+.title span {
+  background: linear-gradient(90deg, #ffffff, #a3ffbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 650px;
+}
+
+.features {
+  margin: 25px 0;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(163, 255, 187, 0.3);
+  border-radius: 50%;
+  margin-right: 16px;
+  flex-shrink: 0;
+  font-size: 14px;
+  color: #a3ffbb;
+}
+
+.feature-text {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #ffffff, #d8fdff);
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 16px;
+  font-size: 17px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #a3ffbb;
+  color: #a3ffbb;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline:hover {
+  background: rgba(163, 255, 187, 0.1);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.right-column {
+  width: 42%;
+  position: relative;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  background-color: white;
+  padding: 8px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  animation: floatUpDown 5s ease-in-out infinite;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  max-height: 700px; /* Максимальная высота чтобы не растягивалось */
+}
+
+/* Стили для плашки с результатами */
+.results-card {
+  position: absolute;
+  bottom: -20px;
+  left: 25px;
+  background: linear-gradient(45deg, #ffffff, #f8f9ff);
+  padding: 16px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #333;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  border: 1px solid rgba(108, 92, 231, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.chart-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #6C5CE7;
+  background: linear-gradient(135deg, #f0f0ff, #e6e6ff);
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(108, 92, 231, 0.2);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.card-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-top: 4px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    min-height: auto;
+    padding: 60px 20px;
+  }
+  .left-column, .right-column {
+    width: 100%;
+  }
+  .right-column {
+    margin-top: 40px;
+  }
+  .title {
+    font-size: 42px;
+  }
+  .results-card {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin-top: 20px;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 36px;
+  }
+}

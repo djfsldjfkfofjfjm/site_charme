@@ -1,0 +1,7 @@
+.DS_Store
+*/.DS_Store
+**/.DS_Store
+Снимок экрана*
+скрины-примеры/
+test-clear.html
+node_modules/
