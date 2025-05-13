@@ -1,8 +1,8 @@
-<section class="pricing-section" style="position: static !important; overflow: visible !important; z-index: 9999 !important;">
+<section class="pricing-section">
   <h2 class="section-title">Тарифы и окупаемость</h2>
   <p class="section-subtitle">Доступные решения для салонов любого размера</p>
   
-  <div class="pricing-cards-container" style="display: flex !important; gap: 24px !important; justify-content: center !important; margin: 0 auto !important; max-width: 1050px !important; position: static !important; overflow: visible !important; z-index: 9999 !important;">
+  <div class="pricing-cards-container">
     <!-- Левая карточка - Для салонов -->
     <div class="pricing-card white-card">
       <h3 class="pricing-card-title">Для салонов (B2B)</h3>
@@ -50,48 +50,41 @@
     </div>
     
     <!-- Правая карточка - Внедрение (упрощенная версия) -->
-    <div style="width: 100%; max-width: 500px; background-color: #6A53FE; color: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05); text-align: left; display: flex; flex-direction: column; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important; min-height: 500px;">
+    <div class="pricing-card purple-card">
       <!-- Заголовок -->
-      <h3 style="font-size: 28px; font-weight: 700; margin: 0 0 12px; color: white; opacity: 1 !important; visibility: visible !important; display: block !important; position: static !important; z-index: 999 !important;">Внедрение "под ключ"</h3>
+      <h3 class="pricing-card-title">Внедрение "под ключ"</h3>
       
       <!-- Подзаголовок -->
-      <p style="font-size: 16px; line-height: 1.5; margin: 0 0 32px; color: rgba(255, 255, 255, 0.8); opacity: 1 !important; visibility: visible !important; display: block !important; position: static !important; z-index: 999 !important;">Полное сопровождение для быстрого старта</p>
+      <p class="pricing-card-subtitle">Полное сопровождение для быстрого старта</p>
       
       <!-- Блок с ценой -->
-      <div style="display: flex; align-items: flex-end; gap: 8px; margin-bottom: 32px; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">
-        <span style="font-size: 42px; font-weight: 700; line-height: 1; color: white; opacity: 1 !important; visibility: visible !important; display: block !important; position: static !important; z-index: 999 !important;">30 000 ₽</span>
-        <span style="font-size: 16px; color: rgba(255, 255, 255, 0.8); margin-bottom: 6px; opacity: 1 !important; visibility: visible !important; display: block !important; position: static !important; z-index: 999 !important;">единоразово</span>
+      <div class="price-block">
+        <span class="price" style="white-space: nowrap; display: inline-block;">30&nbsp;000&nbsp;₽</span>
+        <span class="period">единоразово</span>
       </div>
       
       <!-- Список возможностей -->
-      <div style="margin: 0 0 40px; opacity: 1 !important; visibility: visible !important; display: block !important; position: static !important; z-index: 999 !important; flex-grow: 1;">
-        <!-- Пункт 1 -->
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: white; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">
-          <span style="display: inline-block; color: white; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">✓</span>
-          <span style="opacity: 1 !important; visibility: visible !important; display: inline-block !important; position: static !important; z-index: 999 !important;">Обучение команды</span>
-        </div>
-        
-        <!-- Пункт 2 -->
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: white; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">
-          <span style="display: inline-block; color: white; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">✓</span>
-          <span style="opacity: 1 !important; visibility: visible !important; display: inline-block !important; position: static !important; z-index: 999 !important;">Настройка профилей мастеров</span>
-        </div>
-        
-        <!-- Пункт 3 -->
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: white; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">
-          <span style="display: inline-block; color: white; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">✓</span>
-          <span style="opacity: 1 !important; visibility: visible !important; display: inline-block !important; position: static !important; z-index: 999 !important;">Интеграция с вашими системами</span>
-        </div>
-        
-        <!-- Пункт 4 -->
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: white; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">
-          <span style="display: inline-block; color: white; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">✓</span>
-          <span style="opacity: 1 !important; visibility: visible !important; display: inline-block !important; position: static !important; z-index: 999 !important;">Персональный менеджер на 1 месяц</span>
-        </div>
-      </div>
+      <ul class="features-list">
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Обучение команды</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Настройка профилей мастеров</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Интеграция с вашими системами</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Персональный менеджер на 1 месяц</span>
+        </li>
+      </ul>
       
       <!-- Кнопка -->
-      <a href="https://calendar.app.google/fmPQoEZwdpqDEVgF8" target="_blank" style="display: block; background-color: white; color: #6A53FE; text-align: center; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: background-color 0.3s; opacity: 1 !important; visibility: visible !important; position: static !important; z-index: 999 !important;">Заказать внедрение</a>
+      <a href="https://calendar.app.google/fmPQoEZwdpqDEVgF8" target="_blank" class="price-button white-button" style="display: block !important; background-color: white !important; color: #6A53FE !important; text-align: center !important; padding: 14px 28px !important; border-radius: 8px !important; text-decoration: none !important; font-weight: 600 !important; font-size: 16px !important; margin-top: auto !important; position: relative !important; z-index: 10 !important; width: 100% !important; visibility: visible !important; opacity: 1 !important;">Заказать внедрение</a>
     </div>
   </div>
 
@@ -116,88 +109,230 @@
 <script>
   // Скрипт, который запускается сразу после загрузки компонента
   (function() {
-    function insertSimpleCard() {
-      // Создаем новую, максимально простую карточку через HTML строку
-      const pricingContainer = document.querySelector('.pricing-cards-container');
-      if (pricingContainer) {
-        // Удалим любой существующий дополнительный div, если он был добавлен ранее
-        const existingBackup = document.getElementById('backup-pricing-card');
-        if (existingBackup) {
-          existingBackup.remove();
+    // Удаляем функцию создания дополнительной карточки, 
+    // так как теперь используем стандартные классы CSS
+    // Это повысит стабильность отображения на разных устройствах
+    
+    // Добавляем дополнительные стили для всех устройств, чтобы гарантировать правильное отображение
+    function addExtraStyles() {
+      const style = document.createElement('style');
+      style.textContent = `
+        /* Общие исправления для всех устройств */
+        .pricing-card.purple-card {
+          width: 100%;
+          box-sizing: border-box;
+          display: flex !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          position: relative !important;
+          z-index: 1 !important;
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          min-height: 500px;
         }
         
-        // Добавляем дополнительный div с карточкой (как дублирующий вариант)
-        const backupCard = document.createElement('div');
-        backupCard.id = 'backup-pricing-card';
-        backupCard.style.width = '100%';
-        backupCard.style.maxWidth = '500px';
-        backupCard.style.backgroundColor = '#6A53FE';
-        backupCard.style.color = 'white';
-        backupCard.style.borderRadius = '16px';
-        backupCard.style.padding = '40px';
-        backupCard.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.3)';
-        backupCard.style.textAlign = 'left';
-        backupCard.style.display = 'flex';
-        backupCard.style.flexDirection = 'column';
-        backupCard.style.opacity = '1';
-        backupCard.style.visibility = 'visible';
-        backupCard.style.position = 'static';
-        backupCard.style.zIndex = '9999';
-        backupCard.style.marginLeft = '24px';
-        backupCard.style.height = 'auto';
-        backupCard.style.minHeight = '550px';
-        backupCard.style.transform = 'translateZ(0)'; // Активирует аппаратное ускорение
-        backupCard.style.willChange = 'opacity'; // Оптимизирует отрисовку
+        /* Исправление для знака рубля, чтобы он не отображался отдельно от суммы */
+        .price {
+          white-space: nowrap !important;
+          display: inline-block !important;
+          font-size: 42px !important;
+          font-weight: 700 !important;
+          line-height: 1 !important;
+          color: white !important;
+          position: relative !important;
+          z-index: 2 !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
         
-        backupCard.innerHTML = `
-          <h3 style="font-size: 28px; font-weight: 700; margin: 0 0 12px; color: white;">Внедрение "под ключ"</h3>
-          <p style="font-size: 16px; line-height: 1.5; margin: 0 0 32px; color: rgba(255, 255, 255, 0.8);">Полное сопровождение для быстрого старта</p>
-          
-          <div style="display: flex; align-items: flex-end; gap: 8px; margin-bottom: 32px;">
-            <span style="font-size: 42px; font-weight: 700; line-height: 1; color: white;">30 000 ₽</span>
-            <span style="font-size: 16px; color: rgba(255, 255, 255, 0.8); margin-bottom: 6px;">единоразово</span>
-          </div>
-          
-          <div style="margin: 0 0 40px; flex-grow: 1;">
-            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: white;">
-              <span style="display: inline-block; color: white;">✓</span>
-              <span>Обучение команды</span>
-            </div>
-            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: white;">
-              <span style="display: inline-block; color: white;">✓</span>
-              <span>Настройка профилей мастеров</span>
-            </div>
-            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: white;">
-              <span style="display: inline-block; color: white;">✓</span>
-              <span>Интеграция с вашими системами</span>
-            </div>
-            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: white;">
-              <span style="display: inline-block; color: white;">✓</span>
-              <span>Персональный менеджер на 1 месяц</span>
-            </div>
-          </div>
-          
-          <div style="width: 100%; margin-top: 20px; z-index: 99999; position: relative; opacity: 1 !important; visibility: visible !important;">
-            <a href="https://calendar.app.google/fmPQoEZwdpqDEVgF8" target="_blank" style="width: 100%; display: block !important; background-color: white !important; color: #6A53FE !important; text-align: center !important; padding: 14px 28px !important; border-radius: 8px !important; text-decoration: none !important; border: 2px solid white !important; font-weight: 600 !important; font-size: 16px !important; cursor: pointer !important; outline: none !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important; position: static !important; z-index: 99999 !important; opacity: 1 !important; visibility: visible !important;">Заказать внедрение</a>
-          </div>
-        `;
+        /* Исправления для кнопки, чтобы она отображалась корректно */
+        .price-button.white-button {
+          display: block !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          position: relative !important;
+          z-index: 10 !important;
+          background-color: white !important;
+          color: #6A53FE !important;
+          text-align: center !important;
+          padding: 14px 28px !important;
+          border-radius: 8px !important;
+          text-decoration: none !important;
+          font-weight: 600 !important;
+          font-size: 16px !important;
+          margin-top: auto !important;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+        }
         
-        pricingContainer.appendChild(backupCard);
-      }
+        /* Критически важные стили для устранения бага на мобильных */
+        .purple-card * {
+          opacity: 1 !important;
+          visibility: visible !important;
+          position: relative !important;
+          z-index: auto !important;
+        }
+        
+        /* Исправления специально для мобильных */
+        @media (max-width: 768px) {
+          .pricing-section {
+            overflow: visible !important;
+            position: relative !important;
+            z-index: 1 !important;
+          }
+          
+          .pricing-cards-container {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          
+          .pricing-card.purple-card {
+            margin-bottom: 20px !important;
+          }
+          
+          .price-button.white-button {
+            width: 100% !important;
+            padding: 14px 28px !important;
+            font-weight: 600 !important;
+            border-radius: 8px !important;
+            margin-top: 20px !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+          }
+        }
+      `;
+      document.head.appendChild(style);
     }
     
-    // Запускаем функцию создания простой карточки несколько раз с задержкой
-    // для гарантированной загрузки после всех остальных скриптов
-    insertSimpleCard();
+    // Добавляем стили при загрузке
+    addExtraStyles();
     
-    // Добавим несколько отложенных запусков для надежности
-    setTimeout(insertSimpleCard, 500);
-    setTimeout(insertSimpleCard, 1500);
-    setTimeout(insertSimpleCard, 3000);
+    // Добавляем также обработчик, который выполнится после завершения загрузки страницы
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        // Повторно применяем важные классы и добавляем стили напрямую к элементам
+        const purpleCard = document.querySelector('.purple-card');
+        if (purpleCard) {
+          // Исправление для цены и значка рубля
+          const priceElement = purpleCard.querySelector('.price');
+          if (priceElement) {
+            priceElement.style.whiteSpace = 'nowrap';
+            priceElement.style.display = 'inline-block';
+            priceElement.style.fontSize = '42px';
+            priceElement.style.fontWeight = '700';
+            priceElement.style.lineHeight = '1';
+            priceElement.style.color = 'white';
+            priceElement.style.position = 'relative';
+            priceElement.style.zIndex = '2';
+            priceElement.style.opacity = '1';
+            priceElement.style.visibility = 'visible';
+          }
+          
+          // Исправление для кнопки
+          const buttonElement = purpleCard.querySelector('.price-button');
+          if (buttonElement) {
+            buttonElement.style.display = 'block';
+            buttonElement.style.backgroundColor = 'white';
+            buttonElement.style.color = '#6A53FE';
+            buttonElement.style.textAlign = 'center';
+            buttonElement.style.padding = '14px 28px';
+            buttonElement.style.borderRadius = '8px';
+            buttonElement.style.textDecoration = 'none';
+            buttonElement.style.fontWeight = '600';
+            buttonElement.style.fontSize = '16px';
+            buttonElement.style.position = 'relative';
+            buttonElement.style.zIndex = '10';
+            buttonElement.style.opacity = '1';
+            buttonElement.style.visibility = 'visible';
+            buttonElement.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.2)';
+            buttonElement.style.width = '100%';
+            // Проверяем, что текст кнопки присутствует
+            if (!buttonElement.textContent.trim()) {
+              buttonElement.innerHTML = 'Заказать внедрение';
+            }
+          }
+        }
+      }, 100);
+    });
     
-    // Также срабатывает при прокрутке страницы
-    window.addEventListener('scroll', function() {
-      insertSimpleCard();
-    }, { once: true });
+    // Добавляем еще один обработчик с большей задержкой для случаев медленной загрузки
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        // Повторно применяем важные классы и добавляем стили напрямую к элементам
+        const purpleCard = document.querySelector('.purple-card');
+        if (purpleCard) {
+          // Исправление для цены и значка рубля
+          const priceElement = purpleCard.querySelector('.price');
+          if (priceElement) {
+            priceElement.style.whiteSpace = 'nowrap';
+            priceElement.style.display = 'inline-block';
+            priceElement.style.fontSize = '42px';
+            priceElement.style.fontWeight = '700';
+            priceElement.style.lineHeight = '1';
+            priceElement.style.color = 'white';
+            priceElement.style.position = 'relative';
+            priceElement.style.zIndex = '2';
+            priceElement.style.opacity = '1';
+            priceElement.style.visibility = 'visible';
+            // Принудительно добавляем неразрывные пробелы в текст
+            const priceText = priceElement.textContent;
+            const formattedPrice = priceText.replace(/\s+/g, '\u00A0');
+            if (formattedPrice !== priceText) {
+              priceElement.textContent = formattedPrice;
+            }
+          }
+          
+          // Исправление для кнопки
+          const buttonElement = purpleCard.querySelector('.price-button');
+          if (buttonElement) {
+            buttonElement.style.display = 'block';
+            buttonElement.style.backgroundColor = 'white';
+            buttonElement.style.color = '#6A53FE';
+            buttonElement.style.textAlign = 'center';
+            buttonElement.style.padding = '14px 28px';
+            buttonElement.style.borderRadius = '8px';
+            buttonElement.style.textDecoration = 'none';
+            buttonElement.style.fontWeight = '600';
+            buttonElement.style.fontSize = '16px';
+            buttonElement.style.position = 'relative';
+            buttonElement.style.zIndex = '10';
+            buttonElement.style.opacity = '1';
+            buttonElement.style.visibility = 'visible';
+            buttonElement.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.2)';
+            buttonElement.style.width = '100%';
+            // Проверяем, что текст кнопки присутствует
+            if (!buttonElement.textContent.trim()) {
+              buttonElement.innerHTML = 'Заказать внедрение';
+            }
+          }
+        }
+        
+        // Проверяем и исправляем кнопку, если она не отображается
+        const priceButtonAll = document.querySelectorAll('.price-button.white-button');
+        priceButtonAll.forEach(button => {
+          button.style.display = 'block';
+          button.style.backgroundColor = 'white';
+          button.style.color = '#6A53FE';
+          button.style.textAlign = 'center';
+          button.style.padding = '14px 28px';
+          button.style.borderRadius = '8px';
+          button.style.textDecoration = 'none';
+          button.style.fontWeight = '600';
+          button.style.fontSize = '16px';
+          button.style.position = 'relative';
+          button.style.zIndex = '10';
+          button.style.opacity = '1';
+          button.style.visibility = 'visible';
+          button.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.2)';
+          button.style.width = '100%';
+          // Проверяем, что текст кнопки присутствует
+          if (!button.textContent.trim()) {
+            button.innerHTML = 'Заказать внедрение';
+          }
+        });
+        }
+      }, 100);
+    });
   })();
 </script>

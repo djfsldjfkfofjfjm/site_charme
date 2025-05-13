@@ -60,9 +60,14 @@
   opacity: 1 !important;
   visibility: visible !important;
   display: flex !important;
-  position: static !important;
-  z-index: 5 !important;
+  position: relative !important;
+  z-index: 1 !important;
   flex-direction: column !important;
+  transform: translateZ(0); /* Включает аппаратное ускорение */
+  backface-visibility: hidden; /* Помогает с рендерингом */
+  -webkit-transform: translateZ(0); /* Для Safari */
+  -webkit-backface-visibility: hidden; /* Для Safari */
+  min-height: 500px;
 }
 
 .purple-card .pricing-card-title {
@@ -110,6 +115,12 @@
   font-weight: 700;
   line-height: 1;
   color: #000000;
+  display: inline-block !important; /* Гарантирует, что текст не будет разбит на строки */
+  white-space: nowrap !important; /* Предотвращает перенос внутри элемента */
+  position: relative !important;
+  z-index: 2 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .period {
@@ -168,6 +179,11 @@
 .white-button {
   background-color: white;
   color: #6A53FE;
+  position: relative !important;
+  z-index: 2 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
 }
 
 .white-button:hover {
@@ -312,6 +328,55 @@
   
   .calculator-cta-title {
     font-size: 24px;
+  }
+  
+  /* Дополнительные стили для фиксации проблем отображения на мобильных */
+  .purple-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 20px !important;
+    min-height: 500px !important;
+    /* Включаем аппаратное ускорение для лучшего рендеринга */
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  
+  .purple-card .pricing-card-title,
+  .purple-card .pricing-card-subtitle,
+  .purple-card .price-block,
+  .purple-card .features-list {
+    position: relative !important;
+    z-index: 2 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+  }
+  
+  /* Отдельные усиленные стили для кнопки в мобильной версии */
+  .purple-card .price-button.white-button {
+    position: relative !important;
+    z-index: 10 !important; /* Увеличиваем z-index */
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    background-color: white !important; /* Принудительно устанавливаем фон */
+    color: #6A53FE !important; /* Принудительно устанавливаем цвет текста */
+    padding: 14px 28px !important; /* Принудительно устанавливаем отступы */
+    text-align: center !important; /* Принудительно центрируем текст */
+    font-weight: 600 !important; /* Принудительно устанавливаем жирность шрифта */
+    border-radius: 8px !important; /* Принудительно устанавливаем скругление углов */
+    text-decoration: none !important; /* Убираем подчеркивание */
+    margin-top: 20px !important; /* Добавляем отступ сверху */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* Добавляем тень */
+  }
+  
+  .purple-card .price {
+    color: white !important;
+  }
+  
+  .purple-card .features-list li {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 
