@@ -2,14 +2,14 @@
 .pricing-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 40px 20px 80px; /* Уменьшаем верхний отступ */
   text-align: center;
   background-color: #FFFFFF;
   position: static !important;
   overflow: visible !important;
   z-index: 2 !important;
   border-radius: 30px;
-  margin-top: -30px;
+  margin-top: -15px; /* Уменьшаем наезд */
 }
 
 /* Заголовки */
@@ -22,9 +22,10 @@
 
 .section-subtitle {
   font-size: 20px;
-  font-weight: 400;
-  color: #4a4b57;
+  font-weight: 700;
+  color: #000000; /* Максимально контрастный черный цвет */
   margin: 0 0 70px;
+  text-shadow: none; /* Убираем возможные тени */
 }
 
 /* Контейнер для карточек */
@@ -304,6 +305,10 @@
   .section-subtitle {
     font-size: 18px;
     margin-bottom: 40px;
+    color: #000000; /* Абсолютно черный */
+    font-weight: 800; /* Максимально жирный */
+    text-shadow: none;
+    opacity: 1 !important;
   }
   
   .pricing-card {

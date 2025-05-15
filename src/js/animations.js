@@ -351,8 +351,51 @@ function initWhenComponentsLoaded() {
   }
 }
 
+// Обработка клика по выпадающему меню на мобильных устройствах
+function setupDropdownMenu() {
+  const dropdowns = document.querySelectorAll('.has-dropdown > a');
+  
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', function(e) {
+      // Только для мобильных устройств (ширина экрана < 768px)
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        const dropdownMenu = this.nextElementSibling;
+        
+        // Переключаем видимость меню
+        if (dropdownMenu.style.display === 'block') {
+          dropdownMenu.style.display = 'none';
+        } else {
+          // Закрываем все другие открытые меню
+          document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            if (menu !== dropdownMenu) {
+              menu.style.display = 'none';
+            }
+          });
+          
+          dropdownMenu.style.display = 'block';
+        }
+      }
+    });
+  });
+  
+  // Закрытие выпадающего меню при клике вне его
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.has-dropdown')) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        if (window.innerWidth < 768) {
+          menu.style.display = 'none';
+        }
+      });
+    }
+  });
+}
+
 // Запускаем после загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM загружен, ожидание компонентов...');
   setTimeout(initWhenComponentsLoaded, 500);
+  
+  // Инициализируем выпадающее меню
+  setupDropdownMenu();
 });

@@ -81,6 +81,10 @@ body {
   gap: 24px;
 }
 
+.nav-links li {
+  position: relative;
+}
+
 .nav-links li a {
   color: rgba(255, 255, 255, 0.85);
   font-size: 16px;
@@ -95,6 +99,46 @@ body {
 .nav-links li a.active {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для выпадающего меню */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background-color: #6C5CE7;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  margin-top: 10px;
+}
+
+.has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
 .btn-cta {
@@ -150,9 +194,34 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Скрываем шапку на мобильных устройствах */
+  /* Адаптируем шапку на мобильных устройствах */
   .main-header {
+    padding: 10px 0;
+  }
+  
+  .main-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .has-dropdown .dropdown-menu {
+    position: static;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin-top: 5px;
     display: none;
+  }
+  
+  .has-dropdown:hover .dropdown-menu {
+    display: block;
   }
 }
 
@@ -163,6 +232,11 @@ body {
   
   .nav-links {
     gap: 12px;
+    width: 100%;
+  }
+  
+  .logo-text {
+    font-size: 22px;
   }
   
   .nav-links li a {
@@ -172,5 +246,18 @@ body {
   .btn-cta {
     padding: 8px 16px;
     font-size: 14px;
+  }
+  
+  /* Улучшаем отображение выпадающего меню на малых экранах */
+  .has-dropdown .dropdown-menu {
+    width: 100%;
+    box-shadow: none;
+    background-color: rgba(108, 92, 231, 0.8);
+    border-radius: 4px;
+  }
+  
+  .dropdown-menu a {
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }

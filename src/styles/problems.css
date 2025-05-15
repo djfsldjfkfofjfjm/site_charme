@@ -68,8 +68,14 @@
 .problem-description {
   font-size: 16px;
   line-height: 1.6;
-  color: #555;
+  color: #333;
   margin-bottom: 24px;
+  background-color: #ffecef;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.1);
+  border-left: 4px solid #e74c3c;
+  font-weight: 500;
 }
 
 .solution-box {
